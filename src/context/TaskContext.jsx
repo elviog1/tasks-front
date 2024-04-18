@@ -38,7 +38,6 @@ export function TaskProvider({ children }) {
   const createTask = async (task) => {
     try {
       const res = await createTasksRequest(task);
-      console.log(res);
       navigate("/tasks")
       toastMessage("created")
     } catch (error) {
@@ -50,7 +49,6 @@ export function TaskProvider({ children }) {
   const deleteTask = async (id) => {
     try {
       const res = await deleteTasksRequest(id);
-      console.log(res);
       toastMessage("deleted")
       if (res.status === 204) setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
@@ -70,7 +68,6 @@ export function TaskProvider({ children }) {
   const updateTask = async(id,task) =>{
     try {
       const res = await updateTasksRequest(id,task)
-      console.log(res)
       navigate("/tasks")
       toastMessage("updated")
     } catch (error) {

@@ -31,7 +31,7 @@ export default function RegisterPage() {
           {...register("username", { required: true })}
         />
         {errors.username && (
-          <p className="text-red-500">Username is required.</p>
+          <span className="text-red-500">Username is required.</span>
         )}
         <input
           type="email"
@@ -39,7 +39,7 @@ export default function RegisterPage() {
           placeholder="Email"
           {...register("email", { required: true })}
         />
-        {errors.email && <p className="text-red-500">Email is required.</p>}
+        {errors.email && <span className="text-red-500">Email is required.</span>}
         <input
           type="password"
           className="p-2 my-2 rounded-md w-full"
@@ -47,7 +47,7 @@ export default function RegisterPage() {
           {...register("password", { required: true })}
         />
         {errors.password && (
-          <p className="text-red-500">Password is required.</p>
+          <span className="text-red-500">Password is required.</span>
         )}
         <button
           type="submit"

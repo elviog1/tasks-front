@@ -36,7 +36,7 @@ export default function TaskForm() {
         maxLength={20}
       />
       {errors.title && (
-        <p className="text-red-500 max-w-md w-full">Title is required.</p>
+        <span className="text-red-500 max-w-md w-full">Title is required.</span>
       )}
       <textarea
         className="w-full p-2 my-2 rounded-md resize-none"
@@ -45,7 +45,7 @@ export default function TaskForm() {
         {...register("description", { required: true })}
       ></textarea>
       {errors.description && (
-        <p className="text-red-500 max-w-md w-full">Description is required.</p>
+        <span className="text-red-500 max-w-md w-full">Description is required.</span>
       )}
       <input
         type="date"
@@ -53,7 +53,7 @@ export default function TaskForm() {
         {...register("date", { required: true })}
       />
       {errors.date && (
-        <p className="text-red-500 max-w-md w-full">Date is required.</p>
+        <span className="text-red-500 max-w-md w-full">Date is required.</span>
       )}
       <button className="bg-indigo-600 hover:bg-indigo-500 duration-200 text-xl font-bold text-zinc-300 w-full py-2 rounded-md">
         Save

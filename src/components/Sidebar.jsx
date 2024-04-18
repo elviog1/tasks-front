@@ -8,17 +8,17 @@ export default function Sidebar() {
   const { user, logout } = useAuth();
   const location = useLocation();
   return (
-    <div className="bg-zinc-800 text-zinc-300 font-bold max-w-xs w-full flex flex-col items-center h-screen justify-center gap-10">
+    <div className="bg-zinc-800 text-zinc-300 font-bold md:max-w-xs w-32 md:w-full flex flex-col items-center h-screen justify-center gap-10">
       <div className="flex flex-col gap-4">
-        <div className="flex gap-2 items-center w-60">
+        <div className="flex gap-2 items-center">
           <img src={bull} alt="Bull logo" className="w-10" />
-          <h1 className="w-60 text-4xl">Bull Tasks</h1>
+          <h1 className=" text-2xl md:text-4xl duration-100 hidden md:block">Bull Tasks</h1>
         </div>
-        <p className="w-60 text-sm">
+        <p className=" text-sm hidden md:block">
           Welcome <span className="text-indigo-500">{user?.username}</span>
         </p>
       </div>
-      <div className="flex flex-col gap-2 w-60">
+      <div className="flex flex-col gap-2  ">
         {sidebarLinks.map((item) => (
           <Link
             className={`${
@@ -32,27 +32,27 @@ export default function Sidebar() {
                 style={{ fontSize: "40px", color: item.color, opacity: 0.6 }}
               />
             }
-            {item.label}
+            <span className="hidden md:block">{item.label}</span>
           </Link>
         ))}
-      </div>
       <Link
         to="/tasks/new"
         className={`${
           location.pathname === "/tasks/new" && "bg-zinc-700"
-        } flex text-xl gap-4 items-center w-60 justify-start p-2 rounded-md hover:bg-zinc-700 duration-200`}
+        } flex text-xl gap-4 items-center justify-start  p-2 rounded-md hover:bg-zinc-700 duration-200`}
       >
         <CiSquarePlus style={{ fontSize: "40px", color: "skyblue" }} />
-        New Task
+        <span className="hidden md:block">New Task</span>
       </Link>
       <Link
         to="/"
         onClick={() => logout()}
-        className="flex text-xl gap-4 items-center justify-start w-60 p-2 rounded-md hover:bg-zinc-700 duration-200"
+        className="flex text-xl gap-4 items-center justify-start  p-2 rounded-md hover:bg-zinc-700 duration-200"
       >
         <TbLogout2 style={{ fontSize: "40px", color: "white" }} />
-        Log out
+        <span className="hidden md:block">Log out</span>
       </Link>
+      </div>
     </div>
   );
 }

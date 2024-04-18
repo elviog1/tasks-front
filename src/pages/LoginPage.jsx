@@ -33,7 +33,7 @@ export default function LoginPage() {
           placeholder="Email"
           {...register("email", { required: true })}
         />
-        {errors.email && <p className="text-red-500">Email is required.</p>}
+        {errors.email && <span className="text-red-500">Email is required.</span>}
         <input
           type="password"
           className="p-2 my-2 rounded-md w-full"
@@ -41,7 +41,7 @@ export default function LoginPage() {
           {...register("password", { required: true })}
         />
         {errors.password && (
-          <p className="text-red-500">Password is required.</p>
+          <span className="text-red-500">Password is required.</span>
         )}
         <button
           type="submit"
