@@ -45,14 +45,14 @@ export default function LoginPage() {
         )}
         <button
           type="submit"
-          className="bg-zinc-500 w-full my-2 p-2 rounded-md hover:bg-zinc-600 duration-300"
+          className="bg-indigo-500 text-zinc-300 font-bold w-full my-2 p-2 rounded-md hover:bg-indigo-600 duration-300"
         >
           Login
         </button>
-        <p className="text-zinc-500 py-2">
+        <p className="text-zinc-500 py-2 flex gap-3">
           Don't have an account?{" "}
           <Link
-            className="text-zinc-100 font-bold hover:text-zinc-400"
+            className="text-indigo-500 font-bold hover:text-zinc-400"
             to="/register"
           >
             Sign up

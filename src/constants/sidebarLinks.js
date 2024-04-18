@@ -1,24 +1,30 @@
-import { BsListTask } from "react-icons/bs";
-
+import { GoAlertFill } from "react-icons/go";
+import { GoCheckCircleFill } from "react-icons/go";
+import { GoXCircleFill } from "react-icons/go";
+import { FaTasks } from "react-icons/fa";
 export const sidebarLinks = [
     {
-        // icon: <BsListTask />,
+        icon: FaTasks,
         route: "/tasks",
-        label: "All Tasks"
+        label: "All Tasks",
+        color:"white"
     },
     {
-        // icon: <BsListTask />,
-        route: "/tasks",
-        label: "Pending Tasks"
+        icon: GoAlertFill,
+        route: "/tasks/pending",
+        label: "Pending Tasks",
+        color:"orange"
     },
     {
-        // icon: <BsListTask />,
-        route: "/tasks",
-        label: "Accept Tasks"
+        icon: GoCheckCircleFill,
+        route: "/tasks/approved",
+        label: "Approved Tasks",
+        color:"green"
     },
     {
-        // icon: <BsListTask />,
-        route: "/tasks",
-        label: "Reject Tasks"
+        icon: GoXCircleFill,
+        route: "/tasks/rejected",
+        label: "Rejected Tasks",
+        color:"red"
     },
 ]

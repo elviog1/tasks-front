@@ -1,18 +1,17 @@
-import React from 'react'
-import { sidebarLinks } from '../constants/sidebarLinks'
-import { Link } from 'react-router-dom'
+import { useEffect } from "react"
+import { useTask } from "../context/TaskContext"
+import TaskComponent from "../components/TaskComponent"
 
 export default function TasksPage() {
+  const {getTasks,tasks} = useTask()
+  useEffect(()=>{
+    getTasks()
+  },[])
   return (
-    <div className='bg-zinc-900'>
-      <div className='bg-zinc-600 max-w-xs flex flex-col items-center h-screen justify-around'>
-        <h1>My Tasks</h1>
-        <div className='flex flex-col gap-4'>
-          {sidebarLinks.map(item => (
-            <Link to={item.route} key={item.label}>{item.label}</Link>
-          ))}
-        </div>
-        <h1>Log out</h1>
+    <div className='w-full overflow-y-auto'>
+      <div className="py-10">
+        <h1 className="text-center text-3xl font-bold text-zinc-300 py-6">All Tasks ({tasks?.length})</h1>
+        <TaskComponent allTasks={tasks} />
       </div>
     </div>
   )
